@@ -1,6 +1,8 @@
+import { Baby, BookOpen, GraduationCap, Users } from 'lucide-react';
+
 function Programs() {
   return (
-    <div className="py-16 bg-gradient-to-br from-gray-50 to-white">
+    <div id="programs" className="py-16 bg-gradient-to-br from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">21K School Programs</h2>
@@ -11,7 +13,7 @@ function Programs() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
               <div className="text-center text-white">
-                <div className="text-5xl mb-2">👶</div>
+                <Baby size={60} className="mx-auto mb-2" />
                 <div className="text-xl font-bold">Early Years</div>
               </div>
             </div>
@@ -27,7 +29,7 @@ function Programs() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
               <div className="text-center text-white">
-                <div className="text-5xl mb-2">📚</div>
+                <BookOpen size={60} className="mx-auto mb-2" />
                 <div className="text-xl font-bold">Primary</div>
               </div>
             </div>
@@ -43,7 +45,7 @@ function Programs() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
               <div className="text-center text-white">
-                <div className="text-5xl mb-2">🎓</div>
+                <GraduationCap size={60} className="mx-auto mb-2" />
                 <div className="text-xl font-bold">Middle School</div>
               </div>
             </div>
@@ -59,7 +61,7 @@ function Programs() {
           <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
             <div className="h-48 bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
               <div className="text-center text-white">
-                <div className="text-5xl mb-2">👨‍🎓</div>
+                <Users size={60} className="mx-auto mb-2" />
                 <div className="text-xl font-bold">Senior School</div>
               </div>
             </div>

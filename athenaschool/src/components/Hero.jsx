@@ -1,6 +1,8 @@
+import { GraduationCap, BookOpen, Target, Globe, Bot, User } from 'lucide-react';
+
 function Hero() {
   return (
-    <section className="relative min-h-[90vh] bg-white overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative min-h-[90vh] bg-white overflow-hidden flex items-center justify-center">
       
       {/* CIRCULAR RINGS */}
       <div className="absolute w-[700px] h-[700px] rounded-full border border-gray-200"></div>
@@ -33,12 +35,12 @@ function Hero() {
       </div>
 
       {/* ORBIT ITEMS */}
-      <OrbitItem angle={0} label="🎓 Teachers" />
-      <OrbitItem angle={60} label="📚 Courses" />
-      <OrbitItem angle={120} label="🎯 Skills" />
-      <OrbitItem angle={180} label="🌍 Global" />
-      <OrbitItem angle={240} label="🤖 AI Tools" />
-      <OrbitItem angle={300} label="👨‍🎓 Students" />
+      <OrbitItem angle={0} label={<><GraduationCap size={20} className="mr-1" /> Teachers</>} />
+      <OrbitItem angle={60} label={<><BookOpen size={20} className="mr-1" /> Courses</>} />
+      <OrbitItem angle={120} label={<><Target size={20} className="mr-1" /> Skills</>} />
+      <OrbitItem angle={180} label={<><Globe size={20} className="mr-1" /> Global</>} />
+      <OrbitItem angle={240} label={<><Bot size={20} className="mr-1" /> AI Tools</>} />
+      <OrbitItem angle={300} label={<><User size={20} className="mr-1" /> Students</>} />
 
     </section>
   );
@@ -54,7 +56,7 @@ function OrbitItem({ angle, label }) {
         className="transform -translate-y-4"
         style={{ transform: `rotate(-${angle}deg)` }}
       >
-        <div className="bg-white rounded-full shadow-lg px-4 py-2 text-sm font-medium">
+        <div className="bg-white rounded-full shadow-lg px-4 py-2 text-sm font-medium flex items-center">
           {label}
         </div>
       </div>
