@@ -67,3 +67,12 @@
     transform: translate(0px, 0px) scale(1);
   }
 }
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
