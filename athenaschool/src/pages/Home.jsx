@@ -11,16 +11,14 @@ function Home() {
   return (
     <div>
       <Hero />
-      <div className="pt-16">
-        <Stats />
-        <Programs />
-        
-        <Features />
-        <Testimonials />
-        <Contact />
-        <CTA />
-        <Footer />
-      </div>
+      <Stats />
+      <Programs />
+      
+      <Features />
+      <Testimonials />
+      <Contact />
+      <CTA />
+      <Footer />
     </div>
   );
 }

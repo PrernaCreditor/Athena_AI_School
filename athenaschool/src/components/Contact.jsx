@@ -56,7 +56,7 @@ function Contact() {
                 <div className="mt-2 text-xl">Contact Our Experts</div>
                 <div className="mt-6 text-lg">
                   <p className="mb-2 flex items-center justify-center"><Phone size={18} className="mr-2" /> +91 99999 99999</p>
-                  <p className="flex items-center justify-center"><Mail size={18} className="mr-2" /> info@21kschool.com</p>
+                  <p className="flex items-center justify-center"><Mail size={18} className="mr-2" /> info@aischool.com</p>
                 </div>
               </div>
             </div>

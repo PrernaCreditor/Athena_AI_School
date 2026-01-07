@@ -51,7 +51,7 @@ function Testimonials() {
         </div>
         
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why 21K School Is the Right Online School for Your Child</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why AI School Is the Right Online School for Your Child</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">Excellence Delivered, Consistently</p>
         </div>
         

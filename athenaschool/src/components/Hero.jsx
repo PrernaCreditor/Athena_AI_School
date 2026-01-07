@@ -2,7 +2,7 @@ import { GraduationCap, BookOpen, Target, Globe, Bot, User } from 'lucide-react'
 
 function Hero() {
   return (
-    <section id="home" className="relative min-h-[90vh] bg-white overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative min-h-screen bg-white overflow-hidden flex items-center justify-center py-12 px-8 md:px-8 pt-16" style={{ scrollMarginTop: '64px' }}>
       
       {/* CIRCULAR RINGS */}
       <div className="absolute w-[700px] h-[700px] rounded-full border border-gray-200"></div>
@@ -10,9 +10,9 @@ function Hero() {
       <div className="absolute w-[360px] h-[360px] rounded-full border border-gray-200"></div>
 
       {/* CENTER CONTENT */}
-      <div className="relative z-20 text-center max-w-xl px-6">
+      <div className="relative z-20 text-center max-w-xl px-6 py-8">
         <p className="text-sm font-semibold text-blue-600 mb-3">
-          AI School Community
+          AI-Powered Learning Community
         </p>
 
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
@@ -56,7 +56,7 @@ function OrbitItem({ angle, label }) {
         className="transform -translate-y-4"
         style={{ transform: `rotate(-${angle}deg)` }}
       >
-        <div className="bg-white rounded-full shadow-lg px-4 py-2 text-sm font-medium flex items-center">
+        <div className="bg-white rounded-full shadow-lg px-6 py-3 text-sm font-medium flex items-center">
           {label}
         </div>
       </div>
