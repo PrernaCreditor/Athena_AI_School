@@ -1,4 +1,3 @@
-import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Programs from './components/Programs';
@@ -10,16 +9,17 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <Hero />
-      <Stats />
-      <Programs />
-      <CTA />
-      <Features />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <div className="pt-16">
+        <Stats />
+        <Programs />
+        <CTA />
+        <Features />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }
