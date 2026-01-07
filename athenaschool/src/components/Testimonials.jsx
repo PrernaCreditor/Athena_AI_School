@@ -1,3 +1,5 @@
+import { Star, Clock, GraduationCap, Monitor, Users } from 'lucide-react';
+
 function Testimonials() {
   return (
     <div id="testimonials" className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -55,19 +57,25 @@ function Testimonials() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="text-4xl mb-4 text-blue-600">💻</div>
+            <div className="flex justify-center mb-4 text-blue-600">
+              <Monitor size={40} />
+            </div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Technology Driven Learning</h3>
             <p className="text-gray-600">Our Online Learning School provides a seamless, tech-driven learning experience. With features such as progress tracking, on-demand access to materials, and interactive tools, our learners and expert faculty are always supported.</p>
           </div>
           
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="text-4xl mb-4 text-blue-600">🕒</div>
+            <div className="flex justify-center mb-4 text-blue-600">
+              <Clock size={40} />
+            </div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Anytime Learning</h3>
             <p className="text-gray-600">With over 1,250 hours of live, interactive classes conducted daily, our online school learners engage in dynamic, real-time learning. All sessions are recorded, giving learners the flexibility to revisit lessons anytime and anywhere.</p>
           </div>
           
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-            <div className="text-4xl mb-4 text-blue-600">🎓</div>
+            <div className="flex justify-center mb-4 text-blue-600">
+              <GraduationCap size={40} />
+            </div>
             <h3 className="text-xl font-bold text-gray-900 mb-4">Future Ready Education</h3>
             <p className="text-gray-600">We prepare students for the future with skills-based learning, critical thinking, and problem-solving abilities that will serve them throughout their lives and careers.</p>
           </div>
