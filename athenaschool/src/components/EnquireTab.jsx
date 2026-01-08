@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import EnquiryForm from './EnquiryForm';
 
 function EnquireTab() {
   const [isVisible, setIsVisible] = useState(true);
@@ -22,8 +23,24 @@ function EnquireTab() {
     };
   }, []);
   
+  useEffect(() => {
+    if (isPanelOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPanelOpen]);
+  
   const togglePanel = () => {
     setIsPanelOpen(!isPanelOpen);
+  };
+  
+  const closePanel = () => {
+    setIsPanelOpen(false);
   };
   
   return (
@@ -43,83 +60,38 @@ function EnquireTab() {
         </div>
       </div>
       
+      {/* Overlay when panel is open */}
+      {isPanelOpen && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={closePanel}
+        ></div>
+      )}
+      
       {/* Slide-out Panel */}
       <div 
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-[380px] bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           isPanelOpen ? 'translate-x-0' : 'translate-x-full'
         } md:block hidden`}
       >
-        <div className="p-6 h-full flex flex-col">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-gray-900">Enquire Now</h3>
+        <div className="h-full flex flex-col">
+          <div className="flex justify-between items-center p-4 border-b">
+            <h3 className="text-lg font-semibold text-gray-900">Enquire Now</h3>
             <button 
-              className="text-gray-500 hover:text-gray-700"
-              onClick={() => setIsPanelOpen(false)}
+              className="text-gray-500 hover:text-gray-700 text-xl"
+              onClick={closePanel}
             >
               ✕
             </button>
           </div>
           
-          <div className="flex-1">
-            <form className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <input 
-                  type="text" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Your name"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input 
-                  type="email" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Your email"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                <input 
-                  type="tel" 
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Your phone number"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <textarea 
-                  rows="4"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="Your message"
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit"
-                className="w-full bg-indigo-600 text-white py-3 rounded-md font-semibold hover:bg-indigo-700 transition-colors"
-              >
-                Send Enquiry
-              </button>
-            </form>
-          </div>
-          
-          <div className="mt-6 pt-6 border-t border-gray-200 text-center">
-            <p className="text-sm text-gray-600">Or call us at <span className="font-semibold">+1 (123) 456-7890</span></p>
+          <div className="flex-1 overflow-y-auto p-4 bg-gray-50">
+            <div className="flex items-center justify-center">
+              <EnquiryForm />
+            </div>
           </div>
         </div>
       </div>
-      
-      {/* Overlay when panel is open */}
-      {isPanelOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={() => setIsPanelOpen(false)}
-        ></div>
-      )}
     </>
   );
 }
