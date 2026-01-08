@@ -28,14 +28,14 @@ function EnquiryForm({ onClose }) {
     <div className="w-[360px] bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
       {/* Header */}
       <div className="bg-blue-600 py-3">
-        <h3 className="text-white text-center font-medium">Leap ahead with 21K</h3>
+        <h3 className="text-white text-center font-semibold">Leap ahead with AI School</h3>
       </div>
       
       {/* Form */}
-      <form onSubmit={handleSubmit} className="p-4 space-y-3">
+      <form onSubmit={handleSubmit} className="p-3 space-y-2">
         {/* Name Fields */}
         <div>
-          <label className="block text-xs text-gray-600 mb-1">Name*</label>
+          <label className="block text-xs font-bold text-gray-700 mb-1">Name*</label>
           <div className="flex space-x-2">
             <input
               type="text"
@@ -43,7 +43,7 @@ function EnquiryForm({ onClose }) {
               placeholder="First"
               value={formData.firstName}
               onChange={handleInputChange}
-              className="w-full px-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               required
             />
             <input
@@ -52,7 +52,7 @@ function EnquiryForm({ onClose }) {
               placeholder="Last"
               value={formData.lastName}
               onChange={handleInputChange}
-              className="w-full px-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               required
             />
           </div>
@@ -60,13 +60,13 @@ function EnquiryForm({ onClose }) {
 
         {/* Phone Field */}
         <div>
-          <label className="block text-xs text-gray-600 mb-1">Phone*</label>
+          <label className="block text-xs font-bold text-gray-700 mb-1">Phone*</label>
           <div className="flex space-x-2">
             <select
               name="countryCode"
               value={formData.countryCode}
               onChange={handleInputChange}
-              className="px-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 w-20"
+              className="px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 w-20"
             >
               <option value="+91">+91 🇮🇳</option>
               <option value="+1">+1 🇺🇸</option>
@@ -79,7 +79,7 @@ function EnquiryForm({ onClose }) {
               placeholder="Enter phone number"
               value={formData.phone}
               onChange={handleInputChange}
-              className="flex-1 px-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="flex-1 px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
               required
             />
           </div>
@@ -87,14 +87,14 @@ function EnquiryForm({ onClose }) {
 
         {/* Email Field */}
         <div>
-          <label className="block text-xs text-gray-600 mb-1">Email*</label>
+          <label className="block text-xs font-bold text-gray-700 mb-1">Email*</label>
           <input
             type="email"
             name="email"
             placeholder="Enter your email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full px-2 py-2 text-sm border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full px-2 py-1.5 text-xs border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
             required
           />
         </div>
@@ -102,18 +102,18 @@ function EnquiryForm({ onClose }) {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-yellow-400 text-gray-900 py-3 rounded font-bold hover:bg-yellow-500 transition-colors"
+          className="w-full bg-yellow-400 text-gray-900 py-2.5 rounded font-bold hover:bg-yellow-500 transition-colors"
         >
           Enquire Now
         </button>
 
         {/* Footer Checkbox */}
-        <div className="pt-2">
-          <label className="flex items-start text-xs text-gray-500">
+        <div className="pt-1">
+          <label className="flex items-start text-[10px] text-gray-500">
             <input
               type="checkbox"
               required
-              className="mt-1 mr-2"
+              className="mt-0.5 mr-1.5"
             />
             By submitting, I agree to 21K's terms, privacy & data use.
           </label>

@@ -1,5 +1,7 @@
 import Hero from '../components/Hero';
 import EnquireTab from '../components/EnquireTab';
+import TrustIndicators from '../components/TrustIndicators';
+import LiveChatWidget from '../components/LiveChatWidget';
 import Stats from '../components/Stats';
 import Programs from '../components/Programs';
 import CTA from '../components/CTA';
@@ -50,6 +52,8 @@ function Home() {
         </div>
       </div>
       
+      <TrustIndicators />
+      
       <div className="relative overflow-hidden">
         <div className="absolute -top-20 -left-20 w-60 h-60 bg-teal-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
         <div className="absolute -bottom-20 -right-20 w-68 h-68 bg-red-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
@@ -61,6 +65,7 @@ function Home() {
       
       <CTA />
       <Footer />
+      <LiveChatWidget />
     </div>
   );
 }
