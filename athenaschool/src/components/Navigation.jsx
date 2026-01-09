@@ -1,126 +1,115 @@
 import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Home, User, BookOpen, Award, Users, Phone, ChevronDown } from 'lucide-react';
 
 function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <nav className="bg-white shadow-sm fixed w-full z-50 top-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-600">21K School</span>
-            </div>
-            <div className="hidden md:ml-10 md:flex md:space-x-8">
-              <a href="#" className="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-blue-500 text-sm font-medium hover:text-blue-600">Home</a>
-              <div className="relative group">
-                <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium group-hover:text-blue-600">About</a>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 mt-2 w-48 z-50">
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">What sets us apart?</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Values & Ethos</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">21K Group</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Our Leaders</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Habits of Mind</a>
-                </div>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium group-hover:text-blue-600">Academics</a>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 mt-2 w-48 z-50">
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">NCF India</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Learning Culture</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Pre Primary</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Primary</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Middle</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Senior School</a>
-                </div>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium group-hover:text-blue-600">Admissions</a>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 mt-2 w-48 z-50">
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">How to Register?</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Registration Form</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Who Should Register?</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Batch Timings</a>
-                </div>
-              </div>
-              <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium hover:text-blue-600">Connect</a>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center">
-            <button className="ml-8 bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-              Enquire Now
-            </button>
-          </div>
-          <div className="-mr-2 flex items-center md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
-            >
-              <span className="sr-only">Open main menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
+    <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16 flex items-center px-4 md:px-8">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex items-center">
+          <Link to="/" className="text-xl font-bold text-blue-600">AI School</Link>
+        </div>
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-8">
+          <Link 
+            to="/" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+          >
+            <Home size={18} />
+            <span>Home</span>
+          </Link>
+          <Link 
+            to="/about" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+          >
+            <User size={18} />
+            <span>About</span>
+          </Link>
+          <a href="#programs" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+            <BookOpen size={18} />
+            <span>Programs</span>
+          </a>
+          <a href="#features" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+            <Award size={18} />
+            <span>Features</span>
+          </a>
+          <a href="#testimonials" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+            <Users size={18} />
+            <span>Testimonials</span>
+          </a>
+          <a href="#contact" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+            <Phone size={18} />
+            <span>Contact</span>
+          </a>
+        </div>
+        
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-gray-700 focus:outline-none"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="pt-2 pb-3 space-y-1">
-            <a href="#" className="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
-            <div className="pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
-              <div className="flex justify-between items-center">
-                <span>About</span>
-                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="mt-2 space-y-1 ml-4">
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">What sets us apart?</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Values & Ethos</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">21K Group</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Our Leaders</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Habits of Mind</a>
-              </div>
-            </div>
-            <div className="pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
-              <div className="flex justify-between items-center">
-                <span>Academics</span>
-                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="mt-2 space-y-1 ml-4">
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">NCF India</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Learning Culture</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Pre Primary</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Primary</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Middle</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Senior School</a>
-              </div>
-            </div>
-            <div className="pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
-              <div className="flex justify-between items-center">
-                <span>Admissions</span>
-                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="mt-2 space-y-1 ml-4">
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">How to Register?</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Registration Form</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Who Should Register?</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Batch Timings</a>
-              </div>
-            </div>
-            <a href="#" className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Connect</a>
-            <div className="mt-4 px-4 py-2">
-              <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-                Enquire Now
-              </button>
-            </div>
+      
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4">
+          <div className="flex flex-col space-y-4 px-4">
+            <Link 
+              to="/" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <Home size={18} />
+              <span>Home</span>
+            </Link>
+            <Link 
+              to="/about" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <User size={18} />
+              <span>About</span>
+            </Link>
+            <a 
+              href="#programs" 
+              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <BookOpen size={18} />
+              <span>Programs</span>
+            </a>
+            <a 
+              href="#features" 
+              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <Award size={18} />
+              <span>Features</span>
+            </a>
+            <a 
+              href="#testimonials" 
+              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <Users size={18} />
+              <span>Testimonials</span>
+            </a>
+            <a 
+              href="#contact" 
+              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <Phone size={18} />
+              <span>Contact</span>
+            </a>
           </div>
         </div>
       )}
