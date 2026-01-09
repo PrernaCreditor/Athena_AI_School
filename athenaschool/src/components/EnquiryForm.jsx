@@ -25,14 +25,14 @@ function EnquiryForm({ onClose }) {
   };
 
   return (
-    <div className="w-[360px] bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+    <div className="w-[360px] bg-transparent border-0 rounded-lg shadow-none overflow-hidden pt-40">
       {/* Header */}
       <div className="bg-blue-600 py-3">
         <h3 className="text-white text-center font-semibold">Leap ahead with AI School</h3>
       </div>
       
       {/* Form */}
-      <form onSubmit={handleSubmit} className="p-3 space-y-2">
+      <form onSubmit={handleSubmit} className="p-4 pt-6 space-y-3 bg-white">
         {/* Name Fields */}
         <div>
           <label className="block text-xs font-bold text-gray-700 mb-1">Name*</label>
