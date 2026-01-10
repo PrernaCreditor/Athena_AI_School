@@ -126,18 +126,27 @@ function Navigation() {
               <ChevronDown size={18} />
             </button>
           </div>
-          <a href="#programs" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+          <Link 
+            to="/about" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+          >
+            <User size={18} />
+            <span>About</span>
+          </Link>
+          <Link 
+            to="/programs" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
+          >
             <BookOpen size={18} />
             <span>Programs</span>
-          </a>
-          <a href="#features" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+          </Link>
+          <Link 
+            to="/resources" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
+          >
             <Award size={18} />
-            <span>Features</span>
-          </a>
-          <a href="#testimonials" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
-            <Users size={18} />
-            <span>Testimonials</span>
-          </a>
+            <span>Resources</span>
+          </Link>
           <a href="#contact" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
             <Phone size={18} />
             <span>Contact</span>
@@ -178,30 +187,22 @@ function Navigation() {
               <User size={18} />
               <span>About</span>
             </Link>
-            <a 
-              href="#programs" 
-              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+            <Link 
+              to="/programs" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <BookOpen size={18} />
               <span>Programs</span>
-            </a>
-            <a 
-              href="#features" 
-              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+            </Link>
+            <Link 
+              to="/resources" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <Award size={18} />
-              <span>Features</span>
-            </a>
-            <a 
-              href="#testimonials" 
-              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              <Users size={18} />
-              <span>Testimonials</span>
-            </a>
+              <span>Resources</span>
+            </Link>
             <a 
               href="#contact" 
               className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
