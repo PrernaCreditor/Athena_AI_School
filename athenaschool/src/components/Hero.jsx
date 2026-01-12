@@ -6,7 +6,7 @@ function Hero() {
   };
   
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden flex items-center py-12 px-4 md:px-8 pt-16">
+    <section id="home" className="relative min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 overflow-hidden flex items-center py-12 px-4 md:px-8 pt-24">
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Content */}
