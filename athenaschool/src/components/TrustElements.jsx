@@ -94,97 +94,82 @@ function TrustElements() {
   ];
 
   return (
-    <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Trusted by Thousands Worldwide</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">Recognized accreditations, prestigious awards, and strong partnerships</p>
         </div>
-
-        {/* Accreditations */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <div className="text-center mb-8">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
-              <Shield size={32} />
+        
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex items-center bg-blue-50 px-6 py-3 rounded-full">
+            <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <Shield size={20} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Accreditations</h3>
-            <p className="text-gray-600">Globally recognized educational standards</p>
+            <div>
+              <div className="text-xl font-bold text-blue-600">5000+</div>
+              <div className="text-gray-700 text-sm font-medium">Students</div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex items-center bg-green-50 px-6 py-3 rounded-full">
+            <div className="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <Award size={20} />
+            </div>
+            <div>
+              <div className="text-xl font-bold text-green-600">98%</div>
+              <div className="text-gray-700 text-sm font-medium">Success Rate</div>
+            </div>
+          </div>
+          <div className="flex items-center bg-purple-50 px-6 py-3 rounded-full">
+            <div className="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <Users size={20} />
+            </div>
+            <div>
+              <div className="text-xl font-bold text-purple-600">50+</div>
+              <div className="text-gray-700 text-sm font-medium">Countries</div>
+            </div>
+          </div>
+          <div className="flex items-center bg-yellow-50 px-6 py-3 rounded-full">
+            <div className="bg-yellow-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+              <Star size={20} />
+            </div>
+            <div>
+              <div className="text-xl font-bold text-yellow-600">200+</div>
+              <div className="text-gray-700 text-sm font-medium">Teachers</div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-gray-50 rounded-2xl p-8 mb-12">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Accreditations & Partnerships</h3>
+          <div className="flex flex-wrap justify-center gap-3">
             {accreditations.map((acc, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-                <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
-                  {acc.logo}
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">{acc.name}</h4>
-                <p className="text-gray-600 text-sm">{acc.description}</p>
+              <div key={index} className="bg-white px-5 py-3 rounded-lg shadow-sm border border-gray-200 text-center">
+                <div className="text-lg font-bold text-gray-800">{acc.logo}</div>
+                <div className="text-sm text-gray-600 mt-1">{acc.name}</div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Awards */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <div className="text-center mb-8">
-            <div className="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-yellow-600">
-              <Award size={32} />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Awards & Recognition</h3>
-            <p className="text-gray-600">Industry recognition for excellence</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {awards.map((award, index) => (
-              <div key={index} className="p-6 bg-gradient-to-br from-yellow-50 to-white rounded-xl border border-gray-200">
-                <div className="flex items-center justify-center mb-4">
-                  <Star className="text-yellow-500 fill-current" size={24} />
-                </div>
-                <h4 className="font-bold text-gray-900 mb-1">{award.title}</h4>
-                <p className="text-gray-700 text-sm mb-1">{award.organization}</p>
-                <p className="text-blue-600 font-medium text-sm">{award.year}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Partnerships */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <div className="text-center mb-8">
-            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
-              <Users size={32} />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Partnerships</h3>
-            <p className="text-gray-600">Leading institutions and organizations</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {partnerships.map((partner, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-green-50 to-white rounded-xl border border-gray-200">
-                <div className="bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">
-                  {partner.logo}
-                </div>
-                <h4 className="font-bold text-gray-900 mb-2">{partner.name}</h4>
-                <p className="text-gray-600 text-sm">{partner.description}</p>
+              <div key={index} className="bg-white px-5 py-3 rounded-lg shadow-sm border border-gray-200 text-center">
+                <div className="text-lg font-bold text-gray-800">{partner.logo}</div>
+                <div className="text-sm text-gray-600 mt-1">{partner.name}</div>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Safety Certifications */}
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-          <div className="text-center mb-8">
-            <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-red-600">
-              <Shield size={32} />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Safety Certifications</h3>
-            <p className="text-gray-600">Committed to student safety and security</p>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl p-6 text-white text-center">
+            <div className="text-4xl font-bold mb-2">4</div>
+            <div className="text-blue-100">Accreditations</div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {safetyCertifications.map((cert, index) => (
-              <div key={index} className="text-center p-6 bg-gradient-to-br from-red-50 to-white rounded-xl border border-gray-200">
-                <div className="text-3xl mb-4">{cert.icon}</div>
-                <h4 className="font-bold text-gray-900 mb-2">{cert.name}</h4>
-                <p className="text-gray-600 text-sm">{cert.description}</p>
-              </div>
-            ))}
+          <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-6 text-white text-center">
+            <div className="text-4xl font-bold mb-2">4</div>
+            <div className="text-green-100">Awards</div>
+          </div>
+          <div className="bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-2xl p-6 text-white text-center">
+            <div className="text-4xl font-bold mb-2">4</div>
+            <div className="text-purple-100">Partnerships</div>
           </div>
         </div>
       </div>

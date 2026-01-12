@@ -64,7 +64,7 @@ function LearningMethodology() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">Evidence-based approaches that foster deep understanding and critical thinking</p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Proven Teaching Approaches</h3>
             <p className="text-gray-600 mb-8">
