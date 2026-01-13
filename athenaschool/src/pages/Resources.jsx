@@ -46,7 +46,7 @@ function Resources() {
 
           <div className="py-8">
             {activeTab === 'tools' && (
-              <div className="space-y-12 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-3xl">
+              <div className="space-y-12 bg-white p-8 rounded-3xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div className="bg-white rounded-2xl shadow-lg p-6 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-blue-200">
                     <FeeCalculator />
@@ -61,7 +61,7 @@ function Resources() {
               </div>
             )}
             {activeTab === 'downloads' && (
-              <div className="text-center py-12 bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-3xl">
+              <div className="text-center py-12 bg-white p-8 rounded-3xl">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Download Resources</h3>
                 <p className="text-slate-600 mb-8">Browse our collection of helpful documents and resources</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -93,7 +93,7 @@ function Resources() {
               </div>
             )}
             {activeTab === 'faqs' && (
-              <div className="py-6 bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-3xl">
+              <div className="py-6 bg-white p-8 rounded-3xl">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
                 <div className="space-y-6 max-w-4xl mx-auto">
                   <div className="border-b border-gray-200 pb-6">
@@ -116,7 +116,7 @@ function Resources() {
               </div>
             )}
             {activeTab === 'support' && (
-              <div className="text-center py-12 bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-3xl">
+              <div className="text-center py-12 bg-white p-8 rounded-3xl">
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">Support Resources</h3>
                 <p className="text-slate-600 mb-8">Find help and support for various topics</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">

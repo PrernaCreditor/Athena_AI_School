@@ -25,45 +25,48 @@ function About() {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
-                <span className="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full mr-4"></span>
-                Our Mission
-              </h2>
-              <div className="space-y-4 text-slate-700">
-                <p>
-                  We strive to provide world-class British curriculum education that transcends geographical boundaries, making quality learning accessible to students everywhere.
-                </p>
-                <p>
-                  Our mission is to nurture curious, confident, and capable learners who are prepared to thrive in an ever-evolving global landscape.
-                </p>
+        <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 py-12 rounded-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">Our Mission & Vision</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-white rounded-2xl shadow-xl p-8 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full -translate-y-16 translate-x-16 opacity-50"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold text-slate-900 mb-6 flex items-center">
+                  <span className="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full mr-4"></span>
+                  Our Mission
+                </h2>
+                <div className="space-y-4 text-slate-700">
+                  <p>
+                    We strive to provide world-class British curriculum education that transcends geographical boundaries, making quality learning accessible to students everywhere.
+                  </p>
+                  <p>
+                    Our mission is to nurture curious, confident, and capable learners who are prepared to thrive in an ever-evolving global landscape.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          
-          <div className="bg-blue-600 rounded-2xl shadow-xl p-8 text-white transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-700 to-blue-800 rounded-full translate-y-16 -translate-x-16 opacity-30"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-6 flex items-center">
-                <span className="w-2 h-8 bg-white rounded-full mr-4"></span>
-                Our Vision
-              </h2>
-              <div className="space-y-4 text-white">
-                <p>
-                  To be the leading provider of innovative online British curriculum education, empowering students to reach their full potential through personalized learning experiences.
-                </p>
-                <p>
-                  We envision a world where every child has access to exceptional education that prepares them for success in life and career.
-                </p>
+                            
+            <div className="bg-blue-600 rounded-2xl shadow-xl p-8 text-white transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-700 to-blue-800 rounded-full translate-y-16 -translate-x-16 opacity-30"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold mb-6 flex items-center">
+                  <span className="w-2 h-8 bg-white rounded-full mr-4"></span>
+                  Our Vision
+                </h2>
+                <div className="space-y-4 text-white">
+                  <p>
+                    To be the leading provider of innovative online British curriculum education, empowering students to reach their full potential through personalized learning experiences.
+                  </p>
+                  <p>
+                    We envision a world where every child has access to exceptional education that prepares them for success in life and career.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 py-12 rounded-3xl">
+                        
+        <div className="mb-20 bg-white py-12 rounded-3xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">Why Choose Us</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto px-4">
             <div className="bg-white p-6 rounded-2xl shadow-lg text-center group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
@@ -78,7 +81,7 @@ function About() {
                 <p className="text-slate-600">Rigorous academic standards following the UK curriculum framework</p>
               </div>
             </div>
-            
+                            
             <div className="bg-white p-6 rounded-2xl shadow-lg text-center group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10">
@@ -91,7 +94,7 @@ function About() {
                 <p className="text-slate-600">Highly qualified educators with extensive experience in online learning</p>
               </div>
             </div>
-            
+                            
             <div className="bg-white p-6 rounded-2xl shadow-lg text-center group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10">
@@ -104,7 +107,7 @@ function About() {
                 <p className="text-slate-600">Cutting-edge technology platforms for immersive learning experiences</p>
               </div>
             </div>
-            
+                            
             <div className="bg-white p-6 rounded-2xl shadow-lg text-center group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden border border-gray-100 hover:border-blue-200">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative z-10">
@@ -120,72 +123,73 @@ function About() {
           </div>
         </div>
         
-        <div className="mb-2">
-         
-          
-          <div className="mb-12">
-            <CurriculumOverview />
-          </div>
-          
-          <div className="mb-12">
-            <AgeSpecificPrograms />
+        <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 py-12 rounded-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-8">Our Educational Philosophy</h2>
+          <div className="prose prose-lg max-w-4xl mx-auto text-slate-700">
+            <p className="mb-4 text-center">
+              We believe in fostering a love for learning through inquiry, creativity, and critical thinking. Our approach emphasizes personal growth, academic excellence, and global citizenship.
+            </p>
           </div>
         </div>
         
-        <div className="mb-20">
+        <div className="mb-20 bg-white py-12 rounded-3xl">
+          <CurriculumOverview />
+        </div>
+        
+        <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 py-12 rounded-3xl">
+          <AgeSpecificPrograms />
+        </div>
+        
+        <div className="mb-20 bg-white py-12 rounded-3xl">
           <TeacherQualifications />
         </div>
         
-        <div className="mb-20">
-          <div className="bg-blue-600 rounded-3xl p-1">
-            <div className="bg-white rounded-3xl p-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">Our Learning Methodology</h2>
+        <div className="mb-20 bg-gradient-to-br from-blue-50 to-indigo-50 py-12 rounded-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-900 mb-12">Our Learning Methodology</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                Personalized Learning
+              </h3>
+              <p className="text-slate-700 mb-6">
+                We tailor our approach to each student's unique learning style, pace, and interests, ensuring optimal engagement and comprehension.
+              </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                    <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-                    Personalized Learning
-                  </h3>
-                  <p className="text-slate-700 mb-6">
-                    We tailor our approach to each student's unique learning style, pace, and interests, ensuring optimal engagement and comprehension.
-                  </p>
-                  
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                    <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-                    Interactive Engagement
-                  </h3>
-                  <p className="text-slate-700">
-                    Our lessons incorporate interactive elements, collaborative projects, and hands-on activities to make learning engaging and memorable.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                    <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-                    Continuous Assessment
-                  </h3>
-                  <p className="text-slate-700 mb-6">
-                    Regular assessments and feedback loops help us monitor progress and adapt instruction to meet each student's evolving needs.
-                  </p>
-                  
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
-                    <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
-                    Global Perspective
-                  </h3>
-                  <p className="text-slate-700">
-                    We integrate international perspectives and cultural awareness into our curriculum to prepare students for success in a connected world.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="mt-12 bg-blue-50 rounded-2xl p-6 border-l-4 border-blue-500">
-                <h4 className="text-xl font-bold text-slate-900 mb-2">Our Commitment</h4>
-                <p className="text-slate-700 italic">
-                  "We believe that every student learns differently, and our role is to discover and nurture their unique potential through evidence-based teaching strategies and cutting-edge technology."
-                </p>
-              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                Interactive Engagement
+              </h3>
+              <p className="text-slate-700">
+                Our lessons incorporate interactive elements, collaborative projects, and hands-on activities to make learning engaging and memorable.
+              </p>
             </div>
+            
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                Continuous Assessment
+              </h3>
+              <p className="text-slate-700 mb-6">
+                Regular assessments and feedback loops help us monitor progress and adapt instruction to meet each student's evolving needs.
+              </p>
+              
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 flex items-center">
+                <span className="w-3 h-3 bg-blue-500 rounded-full mr-3"></span>
+                Global Perspective
+              </h3>
+              <p className="text-slate-700">
+                We integrate international perspectives and cultural awareness into our curriculum to prepare students for success in a connected world.
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-12 bg-blue-50 rounded-2xl p-6 border-l-4 border-blue-500">
+            <h4 className="text-xl font-bold text-slate-900 mb-2">Our Commitment</h4>
+            <p className="text-slate-700 italic">
+              "We believe that every student learns differently, and our role is to discover and nurture their unique potential through evidence-based teaching strategies and cutting-edge technology."
+            </p>
           </div>
         </div>
         

@@ -12,19 +12,19 @@ function Programs() {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">Explore our comprehensive British curriculum programs and resources</p>
         </div>
         
-        <div className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div className="py-12 bg-white">
           <div className="bg-white rounded-2xl shadow-lg p-6 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-blue-200">
             <CourseFinder />
           </div>
         </div>
-        
-        <div className="py-12 bg-gradient-to-br from-sky-50 to-blue-50 rounded-3xl my-12">
+                        
+        <div className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl my-12">
           <div className="bg-white rounded-2xl shadow-lg p-6 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-blue-200">
             <FeeCalculator />
           </div>
         </div>
-        
-        <div className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50">
+                        
+        <div className="py-12 bg-white">
           <div className="bg-white rounded-2xl shadow-lg p-6 transform hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-blue-200">
             <AdmissionTracker />
           </div>

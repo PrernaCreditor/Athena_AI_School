@@ -35,7 +35,7 @@ function Home() {
       </div>
       
       {/* Programs Section */}
-      <div className="py-12 bg-gray-50 relative overflow-hidden">
+      <div className="py-12 bg-white relative overflow-hidden">
         <div className="absolute top-0 left-1/4 w-48 h-48 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="absolute bottom-0 right-1/4 w-60 h-60 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
