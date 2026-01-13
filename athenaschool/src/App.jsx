@@ -5,15 +5,17 @@ import About from './pages/About';
 import Programs from './pages/Programs';
 import Resources from './pages/Resources';
 
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/programs" element={<Programs />} />
         <Route path="/resources" element={<Resources />} />
+        
       </Routes>
     </div>
   );

@@ -102,17 +102,17 @@ function Navigation() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+    <nav className={`fixed top-0 left-0 right-0 bg-white shadow-sm z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="text-xl font-bold text-blue-600">AI School</Link>
+          <Link to="/" className="text-xl font-bold text-slate-800">AI School</Link>
         </div>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           <Link 
             to="/" 
-            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+            className={`flex items-center space-x-1 text-slate-700 hover:text-blue-700 font-medium ${location.pathname === '/' ? 'text-blue-600' : ''}`}
           >
             <Home size={18} />
             <span>Home</span>
@@ -120,7 +120,7 @@ function Navigation() {
           <div className="relative mega-menu-toggle">
             <button 
               onClick={toggleMegaMenu}
-              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium"
+              className="flex items-center space-x-1 text-slate-700 hover:text-blue-700 font-medium"
             >
               <span>Menu</span>
               <ChevronDown size={18} />
@@ -128,26 +128,26 @@ function Navigation() {
           </div>
           <Link 
             to="/about" 
-            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+            className={`flex items-center space-x-1 text-slate-700 hover:text-blue-700 font-medium ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
           >
             <User size={18} />
             <span>About</span>
           </Link>
           <Link 
             to="/programs" 
-            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
+            className={`flex items-center space-x-1 text-slate-700 hover:text-blue-700 font-medium ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
           >
             <BookOpen size={18} />
             <span>Programs</span>
           </Link>
           <Link 
             to="/resources" 
-            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
+            className={`flex items-center space-x-1 text-slate-700 hover:text-blue-700 font-medium ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
           >
             <Award size={18} />
             <span>Resources</span>
           </Link>
-          <a href="#contact" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+          <a href="#contact" className="flex items-center space-x-1 text-slate-700 hover:text-blue-700 font-medium">
             <Phone size={18} />
             <span>Contact</span>
           </a>
@@ -160,7 +160,7 @@ function Navigation() {
               setIsOpen(!isOpen);
               setIsMegaMenuOpen(false); // Close mega menu when opening mobile menu
             }}
-            className="text-gray-700 focus:outline-none"
+            className="text-slate-700 focus:outline-none"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -173,7 +173,7 @@ function Navigation() {
           <div className="flex flex-col space-y-4 px-4">
             <Link 
               to="/" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+              className={`flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-medium py-2 ${location.pathname === '/' ? 'text-blue-600' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <Home size={18} />
@@ -181,7 +181,7 @@ function Navigation() {
             </Link>
             <Link 
               to="/about" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+              className={`flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-medium py-2 ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <User size={18} />
@@ -189,7 +189,7 @@ function Navigation() {
             </Link>
             <Link 
               to="/programs" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
+              className={`flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-medium py-2 ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <BookOpen size={18} />
@@ -197,7 +197,7 @@ function Navigation() {
             </Link>
             <Link 
               to="/resources" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
+              className={`flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-medium py-2 ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               <Award size={18} />
@@ -205,7 +205,7 @@ function Navigation() {
             </Link>
             <a 
               href="#contact" 
-              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+              className="flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-medium py-2"
               onClick={() => setIsOpen(false)}
             >
               <Phone size={18} />
@@ -222,16 +222,16 @@ function Navigation() {
             <div className="grid grid-cols-2 md:grid-cols-7 gap-8">
               {menuItems.map((column, index) => (
                 <div key={index}>
-                  <h3 className="text-lg font-bold text-blue-900 mb-4 pb-2 relative">
+                  <h3 className="text-lg font-bold text-slate-900 mb-4 pb-2 relative">
                     {column.title}
-                    <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-yellow-400"></span>
+                    <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-amber-400"></span>
                   </h3>
                   <ul className="space-y-2">
                     {column.links.map((link, linkIndex) => (
                       <li key={linkIndex}>
                         <a 
                           href={link.href}
-                          className="text-gray-700 hover:text-blue-600 hover:underline transition-colors block py-1"
+                          className="text-slate-700 hover:text-blue-600 hover:underline transition-colors block py-1"
                           onClick={() => setIsMegaMenuOpen(false)}
                         >
                           {link.text}

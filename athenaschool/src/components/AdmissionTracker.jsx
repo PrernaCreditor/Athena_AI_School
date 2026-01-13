@@ -102,19 +102,19 @@ function AdmissionTracker() {
   };
 
   return (
-    <div className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Admission Tracker</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">Monitor your application status in real-time</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Admission Tracker</h2>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">Monitor your application status in real-time</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">Track Your Application</h3>
+        <div className=" rounded-xl  p-8 mb-12">
+          <h3 className="text-2xl font-bold text-slate-900 mb-6">Track Your Application</h3>
           
           <form onSubmit={handleTrackStatus} className="flex flex-col sm:flex-row gap-4 mb-8">
             <div className="flex-grow">
-              <label htmlFor="applicationId" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="applicationId" className="block text-sm font-medium text-slate-700 mb-2">
                 Enter Application ID
               </label>
               <input
@@ -125,7 +125,7 @@ function AdmissionTracker() {
                 placeholder="e.g., APP-2024-001"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <p className="mt-2 text-sm text-gray-500">
+              <p className="mt-2 text-sm text-slate-500">
                 Use demo IDs: APP-2024-001, APP-2024-002, or APP-2024-003
               </p>
             </div>
@@ -143,9 +143,9 @@ function AdmissionTracker() {
             <div className="border border-gray-200 rounded-lg p-6">
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
                 <div>
-                  <h4 className="text-xl font-bold text-gray-900">{applicationStatus.studentName}</h4>
-                  <p className="text-gray-600">Application ID: {applicationStatus.id}</p>
-                  <p className="text-gray-600">Date Applied: {new Date(applicationStatus.dateApplied).toLocaleDateString()}</p>
+                  <h4 className="text-xl font-bold text-slate-900">{applicationStatus.studentName}</h4>
+                  <p className="text-slate-600">Application ID: {applicationStatus.id}</p>
+                  <p className="text-slate-600">Date Applied: {new Date(applicationStatus.dateApplied).toLocaleDateString()}</p>
                 </div>
                 <div className="flex items-center mt-4 md:mt-0">
                   {getStatusIcon(applicationStatus.status)}
@@ -165,11 +165,11 @@ function AdmissionTracker() {
                     </div>
                     <div className="ml-4 flex-1">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between">
-                        <h5 className={`font-medium ${step.completed ? 'text-gray-900' : 'text-gray-500'}`}>
+                        <h5 className={`font-medium ${step.completed ? 'text-slate-900' : 'text-slate-500'}`}>
                           {step.name}
                         </h5>
                         {step.date && (
-                          <span className="text-sm text-gray-500 mt-1 sm:mt-0">
+                          <span className="text-sm text-slate-500 mt-1 sm:mt-0">
                             {new Date(step.date).toLocaleDateString()}
                           </span>
                         )}
@@ -183,8 +183,8 @@ function AdmissionTracker() {
               </div>
 
               <div className="mt-6 pt-6 border-t border-gray-200">
-                <h5 className="font-bold text-gray-900 mb-3">Next Steps</h5>
-                <ul className="space-y-2 text-sm text-gray-700">
+                <h5 className="font-bold text-slate-900 mb-3">Next Steps</h5>
+                <ul className="space-y-2 text-sm text-slate-700">
                   {!applicationStatus.steps.find(s => s.id === 4 && s.completed) && (
                     <li className="flex items-center">
                       <Clock size={16} className="mr-2 text-blue-500" />
@@ -210,38 +210,61 @@ function AdmissionTracker() {
 
           {!applicationStatus && (
             <div className="text-center py-8">
-              <Calendar size={48} className="mx-auto text-gray-300 mb-4" />
-              <p className="text-gray-500">Enter your application ID to track your admission status</p>
+              <Calendar size={48} className="mx-auto text-slate-300 mb-4" />
+              <p className="text-slate-500">Enter your application ID to track your admission status</p>
             </div>
           )}
         </div>
 
         <div className="bg-white rounded-2xl shadow-lg p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">How the Process Works</h3>
+          <h3 className="text-2xl font-bold text-slate-900 mb-6">How the Process Works</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600">
-                <FileText size={32} />
-              </div>
-              <h4 className="font-bold text-gray-900 mb-2">Step 1: Apply</h4>
-              <p className="text-gray-600 text-sm">Submit your application with required documents and information</p>
-            </div>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 top-16 bottom-16 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 transform -translate-x-1/2 hidden md:block"></div>
             
-            <div className="text-center p-6 bg-green-50 rounded-lg">
-              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
-                <UserCheck size={32} />
+            <div className="grid grid-cols-1 md:grid-cols-3 relative">
+              <div className="relative md:mb-0">
+                {/* Step 1 circle */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center text-white shadow-lg z-10">
+                  <span className="font-bold">1</span>
+                </div>
+                <div className="text-center p-6 bg-blue-50 rounded-lg relative">
+                  <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600 mt-8">
+                    <FileText size={32} />
+                  </div>
+                  <h4 className="font-bold text-slate-900 mb-2">Apply</h4>
+                  <p className="text-slate-600 text-sm">Submit your application with required documents and information</p>
+                </div>
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Step 2: Assess</h4>
-              <p className="text-gray-600 text-sm">Complete the assessment to evaluate academic readiness</p>
-            </div>
-            
-            <div className="text-center p-6 bg-purple-50 rounded-lg">
-              <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-purple-600">
-                <CheckCircle size={32} />
+              
+              <div className="relative md:mb-0">
+                {/* Step 2 circle */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center text-white shadow-lg z-10">
+                  <span className="font-bold">2</span>
+                </div>
+                <div className="text-center p-6 bg-green-50 rounded-lg relative">
+                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 mt-8">
+                    <UserCheck size={32} />
+                  </div>
+                  <h4 className="font-bold text-slate-900 mb-2">Assess</h4>
+                  <p className="text-slate-600 text-sm">Complete the assessment to evaluate academic readiness</p>
+                </div>
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Step 3: Accept</h4>
-              <p className="text-gray-600 text-sm">Receive an offer and confirm your enrollment</p>
+              
+              <div className="relative md:mb-0">
+                {/* Step 3 circle */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center text-white shadow-lg z-10">
+                  <span className="font-bold">3</span>
+                </div>
+                <div className="text-center p-6 bg-purple-50 rounded-lg relative">
+                  <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-purple-600 mt-8">
+                    <CheckCircle size={32} />
+                  </div>
+                  <h4 className="font-bold text-slate-900 mb-2">Accept</h4>
+                  <p className="text-slate-600 text-sm">Receive an offer and confirm your enrollment</p>
+                </div>
+              </div>
             </div>
           </div>
           
