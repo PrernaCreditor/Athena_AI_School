@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import backgroundImage from '../assets/6247537.jpg';
+import stripImage from '../assets/6247537.jpg';
 import successStoryImage from '../assets/10681.jpg';
 import robotImage from '../assets/robot-decorating-with-wallpaper.jpg';
 import futureReadyImage from '../assets/3d-render-robot-with-books.jpg';
@@ -198,17 +199,9 @@ const Testimonials = () => {
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,white,transparent_70%)]"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
-          <div 
-            className="text-center mb-16 lg:mb-20 relative rounded-3xl overflow-hidden"
-            style={{
-              backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url(${backgroundImage})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          >
+          <div className="text-center mb-16 lg:mb-20 relative rounded-3xl overflow-hidden">
             <div className="relative z-10 px-8 py-2">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 mb-6">
                 <Sparkles className="w-4 h-4 text-sky-500" />
@@ -226,6 +219,18 @@ const Testimonials = () => {
                 No two learners are alike, so why should their journey be? Discover how personalized education creates exceptional results.
               </p>
             </div>
+            
+            {/* Background Image Section */}
+            <div 
+              className="absolute inset-0 rounded-3xl overflow-hidden"
+              style={{
+                backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url(${backgroundImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                zIndex: -1
+              }}
+            />
           </div>
 
           {/* Testimonials Carousel */}

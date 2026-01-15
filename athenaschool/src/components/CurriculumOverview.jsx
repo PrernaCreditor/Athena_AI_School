@@ -3,7 +3,7 @@ import aiChipBg from '../assets/ai-chip-intelligence-technology-deep-learning.jp
 
 function CurriculumOverview() {
   return (
-    <div className="py-8 bg-white relative overflow-hidden">
+    <div className="bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 mb-6">
