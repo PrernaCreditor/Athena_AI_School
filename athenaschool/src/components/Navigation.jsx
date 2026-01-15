@@ -102,7 +102,7 @@ function Navigation() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+    <nav className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-white via-gray-50 to-white shadow-md z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link to="/" className="text-xl font-bold text-blue-600">AI School</Link>
