@@ -1,125 +1,246 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Home, User, BookOpen, Award, Users, Phone, ChevronDown } from 'lucide-react';
 
 function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Close mega menu when clicking outside
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.mega-menu-container') && !event.target.closest('.mega-menu-toggle')) {
+        setIsMegaMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const toggleMegaMenu = () => {
+    setIsMegaMenuOpen(!isMegaMenuOpen);
+  };
+
+  const menuItems = [
+    {
+      title: 'About',
+      links: [
+        { text: 'Our Story', href: '#' },
+        { text: 'Leadership', href: '#' },
+        { text: 'Careers', href: '#' },
+        { text: 'News & Events', href: '#' },
+        { text: 'Partners', href: '#' },
+      ]
+    },
+    {
+      title: 'Academics',
+      links: [
+        { text: 'Curriculum', href: '#' },
+        { text: 'Learning Approach', href: '#' },
+        { text: 'Assessment', href: '#' },
+        { text: 'Faculty', href: '#' },
+        { text: 'Resources', href: '#' },
+      ]
+    },
+    {
+      title: 'Electives',
+      links: [
+        { text: 'Arts & Music', href: '#' },
+        { text: 'Sports', href: '#' },
+        { text: 'STEM', href: '#' },
+        { text: 'Language', href: '#' },
+        { text: 'Coding', href: '#' },
+      ]
+    },
+    {
+      title: 'Admissions',
+      links: [
+        { text: 'Apply Now', href: '#' },
+        { text: 'Admission Process', href: '#' },
+        { text: 'Tuition & Fees', href: '#' },
+        { text: 'Virtual Tour', href: '#' },
+        { text: 'FAQs', href: '#' },
+      ]
+    },
+    {
+      title: 'How it Works',
+      links: [
+        { text: 'Learning Platform', href: '#' },
+        { text: 'Schedule', href: '#' },
+        { text: 'Support', href: '#' },
+        { text: 'Parent Portal', href: '#' },
+        { text: 'Student Portal', href: '#' },
+      ]
+    },
+    {
+      title: 'Being 21K',
+      links: [
+        { text: 'Student Life', href: '#' },
+        { text: 'Community', href: '#' },
+        { text: 'Achievements', href: '#' },
+        { text: 'Alumni', href: '#' },
+        { text: 'Testimonials', href: '#' },
+      ]
+    },
+    {
+      title: 'Connect',
+      links: [
+        { text: 'Contact Us', href: '#' },
+        { text: 'Support', href: '#' },
+        { text: 'Blog', href: '#' },
+        { text: 'Events', href: '#' },
+        { text: 'Webinars', href: '#' },
+      ]
+    }
+  ];
 
   return (
-    <nav className="bg-white shadow-sm fixed w-full z-50 top-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-600">21K School</span>
-            </div>
-            <div className="hidden md:ml-10 md:flex md:space-x-8">
-              <a href="#" className="text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-blue-500 text-sm font-medium hover:text-blue-600">Home</a>
-              <div className="relative group">
-                <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium group-hover:text-blue-600">About</a>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 mt-2 w-48 z-50">
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">What sets us apart?</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Values & Ethos</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">21K Group</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Our Leaders</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Habits of Mind</a>
-                </div>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium group-hover:text-blue-600">Academics</a>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 mt-2 w-48 z-50">
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">NCF India</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Learning Culture</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Pre Primary</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Primary</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Middle</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Senior School</a>
-                </div>
-              </div>
-              <div className="relative group">
-                <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium group-hover:text-blue-600">Admissions</a>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md p-4 mt-2 w-48 z-50">
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">How to Register?</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Registration Form</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Who Should Register?</a>
-                  <a href="#" className="block py-2 text-sm text-gray-700 hover:text-blue-600">Batch Timings</a>
-                </div>
-              </div>
-              <a href="#" className="text-gray-500 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium hover:text-blue-600">Connect</a>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center">
-            <button className="ml-8 bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-              Enquire Now
-            </button>
-          </div>
-          <div className="-mr-2 flex items-center md:hidden">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none"
+    <nav className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-white via-gray-50 to-white shadow-md z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="flex items-center">
+          <Link to="/" className="text-xl font-bold text-blue-600">AI School</Link>
+        </div>
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex space-x-8">
+          <Link 
+            to="/" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+          >
+            <Home size={18} />
+            <span>Home</span>
+          </Link>
+          <div className="relative mega-menu-toggle">
+            <button 
+              onClick={toggleMegaMenu}
+              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium"
             >
-              <span className="sr-only">Open main menu</span>
-              <svg className="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              <span>Menu</span>
+              <ChevronDown size={18} />
             </button>
           </div>
+          <Link 
+            to="/about" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+          >
+            <User size={18} />
+            <span>About</span>
+          </Link>
+          <Link 
+            to="/programs" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
+          >
+            <BookOpen size={18} />
+            <span>Programs</span>
+          </Link>
+          <Link 
+            to="/resources" 
+            className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
+          >
+            <Award size={18} />
+            <span>Resources</span>
+          </Link>
+          <a href="#contact" className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium">
+            <Phone size={18} />
+            <span>Contact</span>
+          </a>
+        </div>
+        
+        {/* Mobile menu button - toggles mobile menu (not mega menu) */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => {
+              setIsOpen(!isOpen);
+              setIsMegaMenuOpen(false); // Close mega menu when opening mobile menu
+            }}
+            className="text-gray-700 focus:outline-none"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
-
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="pt-2 pb-3 space-y-1">
-            <a href="#" className="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
-            <div className="pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
-              <div className="flex justify-between items-center">
-                <span>About</span>
-                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="mt-2 space-y-1 ml-4">
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">What sets us apart?</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Values & Ethos</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">21K Group</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Our Leaders</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Habits of Mind</a>
-              </div>
-            </div>
-            <div className="pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
-              <div className="flex justify-between items-center">
-                <span>Academics</span>
-                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="mt-2 space-y-1 ml-4">
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">NCF India</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Learning Culture</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Pre Primary</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Primary</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Middle</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Senior School</a>
-              </div>
-            </div>
-            <div className="pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium">
-              <div className="flex justify-between items-center">
-                <span>Admissions</span>
-                <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="mt-2 space-y-1 ml-4">
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">How to Register?</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Registration Form</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Who Should Register?</a>
-                <a href="#" className="block py-1 text-sm text-gray-600 hover:text-blue-600">Batch Timings</a>
-              </div>
-            </div>
-            <a href="#" className="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Connect</a>
-            <div className="mt-4 px-4 py-2">
-              <button className="w-full bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm">
-                Enquire Now
-              </button>
+      
+      {/* Mobile Navigation - only show if mega menu is not open */}
+      {isOpen && !isMegaMenuOpen && (
+        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4">
+          <div className="flex flex-col space-y-4 px-4">
+            <Link 
+              to="/" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <Home size={18} />
+              <span>Home</span>
+            </Link>
+            <Link 
+              to="/about" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <User size={18} />
+              <span>About</span>
+            </Link>
+            <Link 
+              to="/programs" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <BookOpen size={18} />
+              <span>Programs</span>
+            </Link>
+            <Link 
+              to="/resources" 
+              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
+              onClick={() => setIsOpen(false)}
+            >
+              <Award size={18} />
+              <span>Resources</span>
+            </Link>
+            <a 
+              href="#contact" 
+              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+              onClick={() => setIsOpen(false)}
+            >
+              <Phone size={18} />
+              <span>Contact</span>
+            </a>
+          </div>
+        </div>
+      )}
+      
+      {/* Mega Menu */}
+      {isMegaMenuOpen && (
+        <div className="mega-menu-container absolute top-full left-0 right-0 bg-white shadow-lg z-40 py-8">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-7 gap-8">
+              {menuItems.map((column, index) => (
+                <div key={index}>
+                  <h3 className="text-lg font-bold text-blue-900 mb-4 pb-2 relative">
+                    {column.title}
+                    <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-yellow-400"></span>
+                  </h3>
+                  <ul className="space-y-2">
+                    {column.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <a 
+                          href={link.href}
+                          className="text-gray-700 hover:text-blue-600 hover:underline transition-colors block py-1"
+                          onClick={() => setIsMegaMenuOpen(false)}
+                        >
+                          {link.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>
