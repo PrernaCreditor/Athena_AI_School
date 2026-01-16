@@ -1,16 +1,20 @@
 import { Monitor, BarChart3, Play, Users } from 'lucide-react';
-import e5f5f5ecImage from '../assets/e5f5f5ec-0236-4707-881d-185ed348d4ae-removebg-preview.png';
+import skillImage from '../assets/skill.wep.webp';
 
 function Features() {
   return (
     <div id="features" className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <img 
-            src={e5f5f5ecImage} 
-            alt="Online Learning" 
-            className="w-full h-[500px] object-contain bg-transparent border-0 drop-shadow-[0_25px_25px_rgba(0,0,0,0.5)]"
-          />
+          <div className="relative overflow-hidden mt-12">
+            <div className="rounded-[4rem] bg-gradient-to-br from-blue-50 to-white p-2">
+              <img 
+                src={skillImage} 
+                alt="Online Learning" 
+                className="w-full h-96 object-cover rounded-[3.5rem]"
+              />
+            </div>
+          </div>
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">No two learners are alike, so why should their journey be?</h2>
             <p className="text-lg text-gray-600 mb-8">

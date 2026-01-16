@@ -392,70 +392,6 @@ const Testimonials = () => {
             </div>
           </div>
 
-          {/* Features Section */}
-          <div className="mb-20 lg:mb-28">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 mb-6">
-                <Zap className="w-4 h-4 text-sky-500" />
-                <span className="text-sm font-semibold text-gray-700">Why Choose Us</span>
-              </div>
-              
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                The Right Online School for Your Child
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Excellence Delivered, Consistently
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature) => (
-                <div key={feature.id} className="space-y-4">
-                  {/* Image Container */}
-                  <div
-                    className={`group relative rounded-2xl h-48 border border-white/50 hover:border-white/70 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl ${
-                      feature.backgroundImage 
-                        ? 'bg-cover bg-center bg-no-repeat' 
-                        : ''
-                    }`}
-                    style={feature.backgroundImage ? {
-                      backgroundImage: `url(${feature.backgroundImage})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: (feature.title === "Anytime Learning" || feature.title === "Personalized Curriculum") ? 'top center' : 'center',
-                      backgroundRepeat: 'no-repeat'
-                    } : {}}
-                  >
-                    {/* Feature Icon */}
-                    <div className={`relative z-10 inline-flex p-4 rounded-2xl ${feature.bgColor} group-hover:scale-110 transition-transform duration-500 border border-white/50`}>
-                      <div className={feature.iconColor}>
-                        {feature.icon}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Text Content Outside Image */}
-                  <div className="px-2">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                      {feature.description}
-                    </p>
-
-                    <div className="flex items-center justify-between pt-2 border-t border-gray-200">
-                      <span className="text-sm font-semibold text-gray-700">
-                        {feature.stats}
-                      </span>
-                      <button className="p-2 rounded-lg bg-sky-50 text-sky-600 hover:text-sky-800 hover:bg-sky-100 transition-colors group-hover:translate-x-1 border border-sky-200">
-                        <ArrowRight className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Stats Section */}
           <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl overflow-hidden shadow-2xl mb-16 border border-white/50">
             <div className="px-8 py-12 lg:px-16 lg:py-20">
@@ -480,22 +416,22 @@ const Testimonials = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="text-center py-8">
-            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+          <div className="text-center py-16 px-8">
+            <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Ready to Start Your Child's Success Story?
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 leading-relaxed">
               Join thousands of successful students who have found their perfect learning path with us.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-900 via-sky-600 to-indigo-600 text-white font-semibold rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                <Users className="w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <button className="inline-flex items-center justify-center gap-3 px-12 py-6 bg-gradient-to-r from-gray-900 via-sky-600 to-indigo-600 text-white font-bold text-lg rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <Users className="w-6 h-6" />
                 Start Free Trial
               </button>
-              <button className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-900 font-semibold rounded-2xl border-2 border-gray-300 hover:bg-gray-50 hover:shadow-lg transition-all duration-300">
+              <button className="inline-flex items-center justify-center gap-3 px-12 py-6 bg-white text-gray-900 font-bold text-lg rounded-2xl border-2 border-gray-300 hover:bg-gray-50 hover:shadow-lg transition-all duration-300">
                 Schedule a Demo
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-6 h-6" />
               </button>
             </div>
           </div>
