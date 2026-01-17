@@ -25,15 +25,16 @@ function Home() {
     <div className="min-h-screen bg-white">
       <EnquireTab />
       <Hero />
-      <AffordableAccredited />
       
       {/* Stats Section */}
-      <div className="py-12 bg-white relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-12 bg-white relative z-10 max-w-7xl mx-auto">
         <Stats />
       </div>
       
+      <AffordableAccredited />
+      
       {/* Programs Section */}
-      <div className="py-12 bg-white relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-12 bg-white relative z-10 max-w-7xl mx-auto">
         <Programs />
       </div>
       

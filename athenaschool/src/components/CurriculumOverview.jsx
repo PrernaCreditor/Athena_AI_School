@@ -1,5 +1,6 @@
 import { BookOpen, GraduationCap, Users, Award, Sparkles } from 'lucide-react';
 import aiChipBg from '../assets/ai-chip-intelligence-technology-deep-learning.jpg';
+import childImage from '../assets/child.webp.webp';
 
 function CurriculumOverview() {
   return (
@@ -47,15 +48,12 @@ function CurriculumOverview() {
             </div>
           </div>
           
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden rounded-full">
             <img 
-              src={aiChipBg}
-              alt="AI Technology Background"
+              src={childImage}
+              alt="Child Learning"
               className="w-full h-auto max-h-96 object-contain rounded-full"
             />
-            
-            <div className="absolute top-0 right-0 w-32 h-32 bg-black/10 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-black/10 rounded-full blur-xl"></div>
           </div>
         </div>
       </div>

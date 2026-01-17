@@ -1,89 +1,103 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { Brain, Settings, Target, Headset, MessageCircleQuestion } from 'lucide-react';
 
-function Hero() {
-  const scrollToEnquiry = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-  
+const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 overflow-hidden flex items-center py-12 px-4 md:px-8 pt-16">
+    <section className="relative w-full min-h-screen bg-white overflow-hidden flex items-center justify-center font-sans">
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        {/* Left Content */}
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-blue-950 mb-6">
-            Find your <span className="text-blue-700">path.</span>
+      {/* --- Background Effects --- */}
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-black opacity-10 mix-blend-overlay z-0"></div>
+      
+      {/* Abstract Grid/Dots Pattern (Simulated) */}
+      <div className="absolute inset-0 opacity-10" 
+           style={{ backgroundImage: 'radial-gradient(circle, #1e3a8a 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
+      </div>
+
+      {/* Decorative Side Lines (Bottom Left) */}
+      <div className="absolute bottom-10 left-10 hidden md:block opacity-50">
+        <svg width="200" height="150" viewBox="0 0 200 150" fill="none" stroke="#1e3a8a" strokeWidth="2">
+          <path d="M190 140 L150 100 L50 100 L10 60" />
+          <path d="M140 140 L110 110" />
+          <path d="M80 140 L60 120" />
+          <circle cx="10" cy="60" r="3" fill="#1e3a8a" />
+        </svg>
+      </div>
+
+      {/* Vertical Dotted Line (Left & Right) */}
+      <div className="absolute left-6 top-1/4 bottom-1/4 w-1 border-l-2 border-dotted border-blue-950/20 hidden md:block"></div>
+      <div className="absolute right-6 top-1/4 bottom-1/4 w-1 border-r-2 border-dotted border-blue-950/20 hidden md:block"></div>
+
+      {/* --- Main Content Container --- */}
+      <div className="container mx-auto px-6 py-12 relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+        
+        {/* --- Left Column: Text --- */}
+        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-blue-950 tracking-tight drop-shadow-lg">
+            Athena AI School
           </h1>
-          <p className="text-xl md:text-2xl text-blue-800 mb-8 max-w-lg mx-auto lg:mx-0">
-            Personalized online schooling designed for the modern learner
-          </p>
-          <p className="text-blue-700 mb-10 max-w-xl mx-auto lg:mx-0">
-            Experience education tailored to your child's unique needs, interests, and learning style. Our AI-powered platform adapts to create the perfect learning journey.
+          <div className="h-1 w-32 bg-blue-950 my-4 rounded-full lg:hidden"></div>
+          <p className="text-lg md:text-2xl text-blue-800 tracking-widest font-light uppercase mt-2">
+            Find your path
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button 
-              className="bg-blue-950 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-900 transition-all shadow-lg hover:shadow-xl"
-              onClick={scrollToEnquiry}
-            >
+          <p className="text-base md:text-lg text-gray-600 mt-4 max-w-2xl">
+            Personalized online schooling designed for modern learner
+          </p>
+          
+          <p className="text-sm md:text-base text-gray-500 mt-3 max-w-xl">
+            Experience education tailored to your child's unique needs, interests, and learning style. Our AI-powered platform adapts to create a perfect learning journey.
+          </p>
+          
+          {/* Call to Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <button className="px-8 py-3 bg-yellow-400 hover:bg-yellow-500 text-black rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
               Enquire Now
             </button>
-            <button className="px-8 py-4 rounded-full border-2 border-blue-950 text-blue-950 font-semibold text-lg hover:bg-blue-950 hover:text-white transition-colors">
+            <button className="px-8 py-3 bg-blue-950/10 hover:bg-blue-950/20 border border-blue-950/30 rounded-full text-blue-950 backdrop-blur-md transition-all duration-300">
               Learn More
             </button>
           </div>
         </div>
-        
-        {/* Right Visual Section */}
-        <div className="relative flex justify-center">
-          <div className="relative w-full max-w-lg h-96 md:h-[450px]">
-            {/* Abstract pathway */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full h-16 md:h-20 bg-gradient-to-r from-blue-200 to-sky-200 rounded-full opacity-50"></div>
-            </div>
-            
-            {/* Curved path */}
-            <div className="absolute inset-0">
-              <svg className="w-full h-full" viewBox="0 0 500 300" preserveAspectRatio="none">
-                <path 
-                  d="M 50 250 Q 150 100 250 150 Q 350 200 450 100" 
-                  fill="none" 
-                  stroke="rgba(30, 58, 138, 0.3)" 
-                  strokeWidth="8" 
-                  strokeDasharray="10,10"
-                />
-              </svg>
-            </div>
-            
-            {/* Human figures along the path */}
-            <div className="absolute top-[20%] left-[10%] transition-transform duration-1000 hover:scale-110">
-              <div className="w-10 h-10 rounded-full bg-blue-950 text-white flex items-center justify-center font-bold">A</div>
-            </div>
-            <div className="absolute top-[40%] left-[30%] transition-transform duration-1000 hover:scale-110">
-              <div className="w-10 h-10 rounded-full bg-blue-800 text-white flex items-center justify-center font-bold">B</div>
-            </div>
-            <div className="absolute top-[60%] left-[50%] transition-transform duration-1000 hover:scale-110">
-              <div className="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center font-bold">C</div>
-            </div>
-            <div className="absolute top-[30%] left-[70%] transition-transform duration-1000 hover:scale-110">
-              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">D</div>
-            </div>
-            <div className="absolute top-[70%] left-[85%] transition-transform duration-1000 hover:scale-110">
-              <div className="w-10 h-10 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold">E</div>
-            </div>
-            
-            {/* Central focal point */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-gradient-to-r from-blue-950 to-blue-700 flex items-center justify-center shadow-2xl animate-pulse">
-              <div className="text-white text-center">
-                <div className="text-2xl font-bold">Path</div>
-                <div className="text-xs opacity-80">Your Journey</div>
-              </div>
-            </div>
-          </div>
+
+        {/* --- Right Column: Robot & Icons --- */}
+        <div className="relative flex justify-center items-center">
+          
+          {/* The Glowing Rings Background */}
+          <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] border border-blue-950/10 rounded-full animate-[spin_10s_linear_infinite]"></div>
+          <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] border border-blue-950/20 rounded-full shadow-[0_0_50px_rgba(30,58,138,0.5)]"></div>
+          
+          {/* Main Gemini Image */}
+          <img 
+            src="/src/assets/gemini.webp.webp" 
+            alt="Athena AI School" 
+            className="relative z-10 w-[800px] drop-shadow-2xl object-contain"
+          />
+
+          {/* Floating Icons (Positioned in semi-circular pattern around the image) */}
+          <FloatingIcon icon={<Brain size={24} />} position="top-0 left-1/4" delay="0s" />
+          <FloatingIcon icon={<Settings size={24} />} position="top-8 left-1/2 -translate-x-1/2" delay="1s" />
+          <FloatingIcon icon={<Target size={24} />} position="top-0 right-1/4" delay="2s" />
+          <FloatingIcon icon={<Headset size={24} />} position="top-16 right-8" delay="1.5s" />
+          <FloatingIcon icon={<MessageCircleQuestion size={24} />} position="top-16 left-8" delay="2.5s" />
+
         </div>
+
       </div>
     </section>
   );
-}
+};
+
+// Helper Component for the floating bubbles
+const FloatingIcon = ({ icon, position, delay }) => {
+  return (
+    <div 
+      className={`absolute ${position} w-12 h-12 md:w-16 md:h-16 bg-blue-950/10 backdrop-blur-md border border-blue-950/30 rounded-full flex items-center justify-center text-blue-950 shadow-[0_0_15px_rgba(30,58,138,0.3)] animate-pulse z-20`}
+      style={{ animationDelay: delay }}
+    >
+      {icon}
+    </div>
+  );
+};
 
 export default Hero;

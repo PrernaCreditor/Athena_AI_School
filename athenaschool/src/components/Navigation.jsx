@@ -5,7 +5,8 @@ import { Menu, X, Home, User, BookOpen, Award, Users, Phone, ChevronDown } from 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -21,6 +22,18 @@ function Navigation() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -102,14 +115,14 @@ function Navigation() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 bg-gradient-to-r from-white via-gray-50 to-white shadow-md z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
+    <nav className={`fixed top-0 left-0 right-0 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'} z-50 h-16 flex items-center px-4 md:px-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Link to="/" className="text-xl font-bold text-blue-600">AI School</Link>
+          <Link to="/" className="text-xl font-bold text-gray-900">AI School</Link>
         </div>
         
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden lg:flex space-x-6 mr-16">
           <Link 
             to="/" 
             className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/' ? 'text-blue-600' : ''}`}
@@ -117,15 +130,6 @@ function Navigation() {
             <Home size={18} />
             <span>Home</span>
           </Link>
-          <div className="relative mega-menu-toggle">
-            <button 
-              onClick={toggleMegaMenu}
-              className="flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium"
-            >
-              <span>Menu</span>
-              <ChevronDown size={18} />
-            </button>
-          </div>
           <Link 
             to="/about" 
             className={`flex items-center space-x-1 text-gray-700 hover:text-blue-600 font-medium ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
@@ -153,12 +157,12 @@ function Navigation() {
           </a>
         </div>
         
-        {/* Mobile menu button - toggles mobile menu (not mega menu) */}
-        <div className="md:hidden">
+        {/* Hamburger menu button - visible on all screen sizes */}
+        <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
           <button 
             onClick={() => {
               setIsOpen(!isOpen);
-              setIsMegaMenuOpen(false); // Close mega menu when opening mobile menu
+              setIsMegaMenuOpen(false); // Close mega menu when opening hamburger menu
             }}
             className="text-gray-700 focus:outline-none"
           >
@@ -167,50 +171,81 @@ function Navigation() {
         </div>
       </div>
       
-      {/* Mobile Navigation - only show if mega menu is not open */}
-      {isOpen && !isMegaMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg py-4">
-          <div className="flex flex-col space-y-4 px-4">
-            <Link 
-              to="/" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/' ? 'text-blue-600' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              <Home size={18} />
-              <span>Home</span>
-            </Link>
-            <Link 
-              to="/about" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              <User size={18} />
-              <span>About</span>
-            </Link>
-            <Link 
-              to="/programs" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              <BookOpen size={18} />
-              <span>Programs</span>
-            </Link>
-            <Link 
-              to="/resources" 
-              className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
-              onClick={() => setIsOpen(false)}
-            >
-              <Award size={18} />
-              <span>Resources</span>
-            </Link>
-            <a 
-              href="#contact" 
-              className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
-              onClick={() => setIsOpen(false)}
-            >
-              <Phone size={18} />
-              <span>Contact</span>
-            </a>
+      {/* Mobile Navigation */}
+      {isOpen && (
+        <div className="absolute top-16 left-0 right-0 bg-white shadow-lg py-4">
+          <div className="container mx-auto px-4">
+            {/* Simple Navigation Links */}
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Link 
+                to="/" 
+                className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/' ? 'text-blue-600' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                <Home size={18} />
+                <span>Home</span>
+              </Link>
+              <Link 
+                to="/about" 
+                className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/about' ? 'text-blue-600' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                <User size={18} />
+                <span>About</span>
+              </Link>
+              <Link 
+                to="/programs" 
+                className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/programs' ? 'text-blue-600' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                <BookOpen size={18} />
+                <span>Programs</span>
+              </Link>
+              <Link 
+                to="/resources" 
+                className={`flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2 ${location.pathname === '/resources' ? 'text-blue-600' : ''}`}
+                onClick={() => setIsOpen(false)}
+              >
+                <Award size={18} />
+                <span>Resources</span>
+              </Link>
+              <a 
+                href="#contact" 
+                className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 font-medium py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                <Phone size={18} />
+                <span>Contact</span>
+              </a>
+            </div>
+            
+            {/* Divider */}
+            <div className="border-t border-gray-200 mb-6"></div>
+            
+            {/* Mega Menu Content */}
+            <div className="flex flex-wrap gap-8 overflow-x-auto">
+              {menuItems.map((column, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <h3 className="text-lg font-bold text-blue-900 mb-3 pb-2 relative whitespace-nowrap">
+                    {column.title}
+                    <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-yellow-400"></span>
+                  </h3>
+                  <ul className="space-y-1">
+                    {column.links.map((link, linkIndex) => (
+                      <li key={linkIndex}>
+                        <a 
+                          href={link.href}
+                          className="text-gray-700 hover:text-blue-600 hover:underline transition-colors block py-1 whitespace-nowrap"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.text}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
